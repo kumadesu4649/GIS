@@ -36,15 +36,34 @@ const map = new maplibregl.Map({
       }
     ]
   },
-  center: [139.7671, 35.6812],
-  zoom: 12
+  center: [139.9558, 35.8338],
+  zoom: 17
 });
+
+    // ピンを追加
+    const marker = new maplibregl.Marker()
+      .setLngLat([139.9558, 35.8338])
+      .addTo(map);
 
     // ポップアップ（吹き出し）を追加
     const popup = new maplibregl.Popup({ offset: 25 })
-      .setLngLat([139.7671, 35.6812])
-      .setHTML("<h3>Hello world!</h3><p>Greetings from Japan!🇯🇵</p>")
+      .setLngLat([139.9558, 35.8338])
+      .setHTML("<h3>麗澤大学</h3><p>れいたくだいがく</p>")
+    .addTo(map);
+    
+        // ピンを追加
+    const marker2 = new maplibregl.Marker()
+      .setLngLat([139.98812,35.8623])
       .addTo(map);
+
+    // ポップアップ（吹き出し）を追加
+    const popup2 = new maplibregl.Popup({ offset: 25 })
+      .setLngLat([139.98812,35.8623])
+      .setHTML("<h3>開智国際大学</h3><p>かいちこくさいだいがく</p>")
+    .addTo(map);
+
+    // ピンにポップアップを関連付け
+    marker.setPopup(popup);
   </script>
 </body>
 </html>
